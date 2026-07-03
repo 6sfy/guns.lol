@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>guns.lol docs</title>
+<link rel="stylesheet" href="css/doc.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,450;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+
+<aside class="sidebar" id="sidebar" role="navigation">
+  <div class="sidebar-header">
+    <a href="#" class="sidebar-brand" onclick="showSection('introduction');return false">
+      <span class="logo-mark">G</span>
+      <span class="logo-text">guns.lol</span>
+    </a>
+    <div class="sidebar-search">
+      <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search docs">
+    </div>
+    <div class="sidebar-actions">
+      <a href="https://github.com/6sfy/guns.lol/archive/refs/heads/main.zip" class="sa-btn" title="Download ZIP" target="_blank">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Download</span>
+      </a>
+      <button class="sa-btn theme-btn" id="themeToggle" title="Toggle theme">
+        <svg class="sun-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <svg class="moon-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-group">
+      <div class="nav-group-title"><span class="arrow">&#9660;</span> Getting Started</div>
+      <ul class="nav-items">
+        <li class="nav-item"><a data-target="introduction"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Introduction</a></li>
+        <li class="nav-item"><a data-target="quickstart"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Quick Start</a></li>
+        <li class="nav-item"><a data-target="project-structure"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>Project Structure</a></li>
+      </ul>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title"><span class="arrow">&#9660;</span> Configuration</div>
+      <ul class="nav-items">
+        <li class="nav-item"><a data-target="config-overview"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Config Overview</a></li>
+        <li class="nav-item"><a data-target="config-profile"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a></li>
+        <li class="nav-item"><a data-target="config-badges"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Badges</a></li>
+        <li class="nav-item"><a data-target="config-bio"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Bio &amp; Typewriter</a></li>
+        <li class="nav-item"><a data-target="config-links"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Links</a></li>
+        <li class="nav-item"><a data-target="config-audio"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Audio Player</a></li>
+        <li class="nav-item"><a data-target="config-layout"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>Layouts</a></li>
+        <li class="nav-item"><a data-target="config-theme"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/></svg>Theme</a></li>
+        <li class="nav-item"><a data-target="config-background"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Background</a></li>
+      </ul>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title"><span class="arrow">&#9660;</span> Effects</div>
+      <ul class="nav-items">
+        <li class="nav-item"><a data-target="effect-mouse"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>Mouse Effects</a></li>
+        <li class="nav-item"><a data-target="effect-card3d"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>3D Card Tilt</a></li>
+        <li class="nav-item"><a data-target="effect-cursor"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/></svg>Custom Cursor</a></li>
+        <li class="nav-item"><a data-target="effect-shuffle"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>Shuffle Text</a></li>
+        <li class="nav-item"><a data-target="effect-particles"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="1"/><path d="M12 2v4m0 12v4m-10-10h4m12 0h4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>Particle System</a></li>
+      </ul>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title"><span class="arrow">&#9660;</span> Extra Sections</div>
+      <ul class="nav-items">
+        <li class="nav-item"><a data-target="extra-location"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Location</a></li>
+        <li class="nav-item"><a data-target="extra-about"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>About</a></li>
+        <li class="nav-item"><a data-target="extra-portfolio"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Portfolio</a></li>
+      </ul>
+    </div>
+    <div class="nav-group">
+      <div class="nav-group-title"><span class="arrow">&#9660;</span> Reference</div>
+      <ul class="nav-items">
+        <li class="nav-item"><a data-target="example-complete"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Complete Config</a></li>
+        <li class="nav-item"><a data-target="troubleshooting"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12" y2="16"/></svg>Troubleshooting</a></li>
+        <li class="nav-item"><a data-target="changelog"><svg class="ni" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Changelog</a></li>
+      </ul>
+    </div>
+  </nav>
+</aside>
+
+<div class="main" role="main">
+  <div class="doc-bar"><a href="https://docs.sexcaller.lol" target="_blank">docs.sexcaller.lol</a> <span class="doc-bar-sep">/</span> <span id="docBarCurrent">Docs</span></div>
+  <div class="content" id="mainContent">
+
+    <section id="introduction" class="doc-section">
+<div class="section-hero">
+  <h1>Documentation</h1>
+  <p class="hero-desc">Everything you need to build and customize your guns.lol profile page.</p>
+</div>
+
+<div class="callout tip">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  <p><strong>Like this project?</strong> Visit my profile on <a href="https://guns.lol/500" target="_blank">guns.lol/500</a> or <a href="https://sexcaller.lol" target="_blank">sexcaller.lol</a> — drop a view, it helps a lot.</p>
+</div>
+
+<div class="callout warn">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12" y2="17"/></svg>
+  <p><strong>Disclaimer:</strong> This is a <strong>fan-made clone</strong> of a guns.lol profile page. It is missing many features and layouts from the real site. I am not responsible for what you do with this code. Build on it, extend it, break it — it's yours now.</p>
+</div>
+
+<div class="nav-cards">
+  <a href="#" class="nav-card" onclick="showSection('quickstart');return false" style="--card-color:#A855F7">
+    <div class="nc-icon" style="color:#A855F7">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+    </div>
+    <div class="nc-body">
+      <strong>Quick Start</strong>
+      <span>Get running in 30 seconds</span>
+    </div>
+  </a>
+  <a href="#" class="nav-card" onclick="showSection('config-overview');return false" style="--card-color:#3B82F6">
+    <div class="nc-icon" style="color:#3B82F6">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </div>
+    <div class="nc-body">
+      <strong>Configuration</strong>
+      <span>All settings explained</span>
+    </div>
+  </a>
+  <a href="#" class="nav-card" onclick="showSection('config-theme');return false" style="--card-color:#10B981">
+    <div class="nc-icon" style="color:#10B981">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+    </div>
+    <div class="nc-body">
+      <strong>Themes &amp; Appearance</strong>
+      <span>Dark, neon, ocean, and custom</span>
+    </div>
+  </a>
+  <a href="#" class="nav-card" onclick="showSection('config-background');return false" style="--card-color:#F59E0B">
+    <div class="nc-icon" style="color:#F59E0B">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    </div>
+    <div class="nc-body">
+      <strong>Background Effects</strong>
+      <span>Aurora, stars, snow, and more</span>
+    </div>
+  </a>
+  <a href="#" class="nav-card" onclick="showSection('changelog');return false" style="--card-color:#8B5CF6">
+    <div class="nc-icon" style="color:#8B5CF6">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+    </div>
+    <div class="nc-body">
+      <strong>Changelog</strong>
+      <span>What&rsquo;s new and updated</span>
+    </div>
+  </a>
+</div>
+
+<h2>What is this?</h2>
+<p>A fully customizable <strong>guns.lol profile page clone</strong> built with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools. Everything controlled from <code>src/js/config.js</code>.</p>
+
+<div class="callout tip">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  <p><strong>Zero server required.</strong> Edit config.js, refresh the browser, see changes instantly.</p>
+</div>
+
+<h2>Features</h2>
+<div class="feature-grid">
+  <div class="feature-item">
+    <strong>5 Layouts</strong>
+    <span>Default, stacked, compact, minimal, glass</span>
+  </div>
+  <div class="feature-item">
+    <strong>12 Badges</strong>
+    <span>With tooltips and custom colors</span>
+  </div>
+  <div class="feature-item">
+    <strong>Typewriter Bio</strong>
+    <span>Cycle through multiple texts</span>
+  </div>
+  <div class="feature-item">
+    <strong>Audio Player</strong>
+    <span>Inline player with playlist support</span>
+  </div>
+  <div class="feature-item">
+    <strong>7 BG Effects</strong>
+    <span>Aurora, stars, snow, rain, plasma, fireflies, dither</span>
+  </div>
+  <div class="feature-item">
+    <strong>4 Mouse Effects</strong>
+    <span>Trail, particles, glow, ripple</span>
+  </div>
+  <div class="feature-item">
+    <strong>3D Tilt</strong>
+    <span>Interactive card rotation on hover</span>
+  </div>
+  <div class="feature-item">
+    <strong>Theme Presets</strong>
+    <span>Dark, light, neon, ocean, or custom</span>
+  </div>
+  <div class="feature-item">
+    <strong>Custom Cursor</strong>
+    <span>Replace the system cursor</span>
+  </div>
+  <div class="feature-item">
+    <strong>Extra Sections</strong>
+    <span>Location, about, portfolio</span>
+  </div>
+  <div class="feature-item">
+    <strong>Shuffle Text</strong>
+    <span>Matrix-style animation on username</span>
+  </div>
+</div>
+
+<figure class="doc-img">
+<img src="screenshots/example.png" alt="Profile example">
+<figcaption>Default profile (Sixfy) with splash, badges, links, typewriter bio</figcaption>
+</figure>
+</section>
+
+<section id="quickstart" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Getting Started</div>
+  <h1>Quick Start</h1>
+  <p class="hero-desc">From zero to a fully customized profile in under two minutes.</p>
+</div>
+
+<div class="callout info">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+  <p>No build step, no npm install, no server required. Edit a config file, refresh the browser, see changes instantly.</p>
+</div>
+
+<h3>1. Get the project</h3>
+<p>Clone or download the repository. The project is a flat file structure — no framework, no bundler.</p>
+<div class="code-block"><span class="lang-label">sh</span><pre><code>git clone https://github.com/6sfy/guns.lol.git
+cd guns.lol</code></pre></div>
+
+<h3>2. Open the config file</h3>
+<p>All configuration lives in <code>src/js/config.js</code>. Open it in any text editor.</p>
+
+<h3>3. Set your identity</h3>
+<p>Change the display name and user ID to your own.</p>
+<div class="code-block"><span class="lang-label">js</span><pre><code>const CONFIG = {
+  username: "YourName",
+  uid: "12,345",
+  joinedDate: "Joined 3 months ago",
+  // ...
+};</code></pre></div>
+
+<h3>4. Add badges</h3>
+<p>Badges appear beneath your avatar. Just use the icon key — color and name are automatic.</p>
+<div class="code-block"><span class="lang-label">js</span><pre><code>badges: ["verified", "premium"],</code></pre></div>
+
+<h3>5. Add links</h3>
+<p>Each link gets an icon image and a shadow color.</p>
+<div class="code-block"><span class="lang-label">js</span><pre><code>links: [
+  { url: "https://github.com/YourName", icon: "src/assets/icons/icon.png", color: "#ffffff" },
+],</code></pre></div>
+
+<h3>6. Choose a layout and theme</h3>
+<div class="code-block"><span class="lang-label">js</span><pre><code>layout: { type: "glass", containerWidth: "44rem" },
+theme: { preset: "dark" },</code></pre></div>
+
+<h3>7. Open in browser</h3>
+<p>Open <code>index.html</code> in your browser (double-click or drag into a browser window).</p>
+<p>If you're already editing, just hit <strong>Ctrl+R</strong> / <strong>Cmd+R</strong> to see changes.</p>
+
+<div class="callout tip">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  <p><strong>Pro tip:</strong> Use a live-reload server like <code>bunx serve</code> or VS Code's Live Server extension for instant refresh on save.</p>
+</div>
+
+<h3>Minimal working config</h3>
+<p>This is the smallest config that produces a working profile page.</p>
+<div class="code-block"><span class="lang-label">js</span><pre><code>const CONFIG = {
+  username: "YourName",
+  uid: "12,345",
+  splash: { text: "hello", fontSize: "34px" },
+  avatar: { type: "icon" },
+  bio: { typewriter: false, staticBio: "Just vibing." },
+  joinedDate: "Joined 3 months ago",
+  badges: [],
+  links: [],
+  views: 0,
+  layout: { type: "default", containerWidth: "44rem" },
+  theme: { preset: "dark" },
+  background: { color: "#000000", effects: {} },
+};</code></pre></div>
+</section>
+
+<section id="project-structure" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Getting Started</div>
+  <h1>Project Structure</h1>
+  <p class="hero-desc">How the project is organized and how it works.</p>
+</div>
+
+<div class="code-block"><span class="lang-label">text</span><pre><code>guns.lol/
+&#x251C;&#x2500;&#x2500; index.html              # Entry point — open this in your browser
+&#x251C;&#x2500;&#x2500; src/
+&#x2502;   &#x251C;&#x2500;&#x2500; js/
+&#x2502;   &#x2502;   &#x251C;&#x2500;&#x2500; config.js   # &#x2605; Your configuration file
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; main.js     # Application logic and rendering
+&#x2502;   &#x251C;&#x2500;&#x2500; css/
+&#x2502;   &#x2502;   &#x2514;&#x2500;&#x2500; style.css   # Profile page styles
+&#x2502;   &#x2514;&#x2500;&#x2500; assets/     # Images, icons, cursors, fonts
+&#x2502;       &#x251C;&#x2500;&#x2500; avatar/
+&#x2502;       &#x251C;&#x2500;&#x2500; cursor/
+&#x2502;       &#x2514;&#x2500;&#x2500; icons/
+&#x2514;&#x2500;&#x2500; docs/                    # Documentation site (you are here)</code></pre></div>
+
+<h2>How it works</h2>
+<ol>
+<li><code>index.html</code> loads <code>config.js</code> first, which defines the <code>CONFIG</code> object globally</li>
+<li><code>main.js</code> reads <code>CONFIG</code>, generates CSS custom properties, builds the HTML structure, and initializes effects</li>
+<li>All rendering is <strong>purely client-side</strong> — no server, no API, no database</li>
+<li>Edit <code>config.js</code>, refresh the browser, see changes instantly</li>
+</ol>
+
+<div class="callout warn">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12" y2="17"/></svg>
+  <p><strong>Important:</strong> <code>config.js</code> must load <em>before</em> <code>main.js</code> in the HTML. The default file already handles this correctly.</p>
+</div>
+</section>
+
+<section id="config-overview" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Reference</div>
+  <h1>Configuration Overview</h1>
+  <p class="hero-desc">Every top-level property in the <code>CONFIG</code> object at a glance.</p>
+</div>
+
+<p>The entire profile is controlled by a single <code>CONFIG</code> object in <code>src/js/config.js</code>. Every feature is optional — leave fields at their default, set values to <code>false</code>, or use empty arrays to disable anything.</p>
+
+<p>Here is the actual <code>config.js</code> with all default values — use it as your starting template:</p>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>const CONFIG = {
+  username: "Sixfy",
+  uid: "20,028",
+  splash: { text: "guns.lol", fontSize: "34px", fontFamily: "", fontWeight: "500", color: "" },
+  avatar: { type: "icon" },
+  bio: { typewriter: true, texts: ["love", "sex", "hate", "disgust"], staticBio: "disgust", typeSpeed: 80, deleteSpeed: 50, pauseDuration: 2000 },
+  joinedDate: "Joined over 2 years ago",
+  badges: ["premium"],
+  links: [{ url: "https://example.com", icon: "src/assets/icons/icon.png", color: "#ffffff" }],
+  views: 644,
+  audio: { src: "", title: "Another One", artist: "DJ Khaled", autoplay: true, loop: true, volume: 0.3, showControls: false, playlist: [] },
+  volumeControl: { enabled: false, position: "top-left" },
+  progressBar: { height: 3, radius: 15, color: "#ffffff", bgColor: "rgba(255,255,255,0.3)", thumbSize: 10, gradient: [] },
+  cursor: { enabled: true, src: "src/assets/cursor/cursor.png", hotspotX: 16, hotspotY: 16 },
+  mouseEffect: { enabled: true, variant: "particles", color: "#ffffff" },
+  card3d: { enabled: true, intensity: 8, perspective: 1000 },
+  fonts: { enabled: true, families: ["Array", "Onest"], importUrl: "" },
+  shuffleText: { enabled: false, text: "SIXFY", fontFamily: "Press Start 2P", fontSize: "4rem" },
+  layout: { type: "glass", containerWidth: "44rem", containerPadding: "26px", containerRadius: "20px" },
+  location: { enabled: false, text: "guns.lol HQ", timezone: "Europe/Berlin" },
+  about: { enabled: false, text: "Hi. I own guns.lol." },
+  portfolio: { enabled: false, skills: ["Python", "JavaScript"], projects: [{ name: "guns.lol", description: "Create feature-rich, customizable and modern link-in-bio pages.", url: "https://guns.lol" }] },
+  theme: { preset: "", textColor: "#ffffff", backgroundColor: "#000000", glowColor: "#ffffff", usernameEffects: "", containerColor: "rgba(255,255,255,0)", containerBlur: "0px", containerBorderWidth: "2px", containerBorderColor: "rgba(200,130,255,0.5)", selectionBg: "#ffffff", selectionColor: "#000000", buttonBg: "rgba(255,255,255,0.22)", buttonBgHover: "rgba(255,255,255,0.32)", buttonBorder: "2px solid rgba(255,255,255,0.12)", buttonRadius: "12px", volumeBg: "rgba(255,255,255,0.2)", volumeBorder: "2px solid rgba(255,255,255,0.05)" },
+  background: { src: "", color: "#000000", effects: { aurora: true, dither: false, plasma: false, snow: false, rain: false, stars: true, fireflies: false } },
+};</code></pre></div>
+
+<h2>Top-level properties</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Property</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>username</code></td><td>string</td><td><code>"Sixfy"</code></td><td>Display name at the top</td></tr>
+<tr><td><code>uid</code></td><td>string</td><td><code>"20,028"</code></td><td>User ID in hover tooltip</td></tr>
+<tr><td><code>splash</code></td><td>object</td><td>—</td><td>Overlay text and styling</td></tr>
+<tr><td><code>avatar</code></td><td>object</td><td>—</td><td>Icon or image avatar</td></tr>
+<tr><td><code>bio</code></td><td>object</td><td>—</td><td>Static or typewriter bio</td></tr>
+<tr><td><code>joinedDate</code></td><td>string</td><td><code>"Joined over 2 years ago"</code></td><td>Join date text</td></tr>
+<tr><td><code>badges</code></td><td>array</td><td><code>[]</code></td><td>Badge icon definitions</td></tr>
+<tr><td><code>links</code></td><td>array</td><td><code>[]</code></td><td>Social/URL link buttons</td></tr>
+<tr><td><code>views</code></td><td>number</td><td><code>644</code></td><td>Initial view count display</td></tr>
+<tr><td><code>audio</code></td><td>object</td><td>—</td><td>Audio player settings</td></tr>
+<tr><td><code>volumeControl</code></td><td>object</td><td>—</td><td>Floating volume slider</td></tr>
+<tr><td><code>progressBar</code></td><td>object</td><td>—</td><td>Audio seek bar style</td></tr>
+<tr><td><code>cursor</code></td><td>object</td><td>—</td><td>Custom cursor image</td></tr>
+<tr><td><code>mouseEffect</code></td><td>object</td><td>—</td><td>Mouse trail / particles / glow / ripple</td></tr>
+<tr><td><code>card3d</code></td><td>object</td><td>—</td><td>3D perspective tilt on hover</td></tr>
+<tr><td><code>fonts</code></td><td>object</td><td>—</td><td>Custom font families</td></tr>
+<tr><td><code>shuffleText</code></td><td>object</td><td>—</td><td>Matrix-style text scramble</td></tr>
+<tr><td><code>layout</code></td><td>object</td><td>—</td><td>Layout preset and dimensions</td></tr>
+<tr><td><code>location</code></td><td>object</td><td>—</td><td>Location pin with live clock</td></tr>
+<tr><td><code>about</code></td><td>object</td><td>—</td><td>Personal text section</td></tr>
+<tr><td><code>portfolio</code></td><td>object</td><td>—</td><td>Skills and projects showcase</td></tr>
+<tr><td><code>theme</code></td><td>object</td><td>—</td><td>Colors, fonts, button styles</td></tr>
+<tr><td><code>background</code></td><td>object</td><td>—</td><td>Color, image, canvas effects</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="config-profile" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Configuration</div>
+  <h1>Profile</h1>
+  <p class="hero-desc">Your display name, avatar, splash overlay, and join date.</p>
+</div>
+
+<p>These fields control the identity section at the top of your profile — the username, avatar, splash text overlay, and join date stamp.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>username</code></td><td>string</td><td><code>"Sixfy"</code></td><td>Display name shown at the top of the profile</td></tr>
+<tr><td><code>uid</code></td><td>string</td><td><code>"20,028"</code></td><td>User ID displayed in hover tooltip</td></tr>
+<tr><td><code>joinedDate</code></td><td>string</td><td><code>"Joined over 2 years ago"</code></td><td>Join date stamp shown below badges. Set to empty string to hide.</td></tr>
+<tr><td><code>splash</code></td><td>object</td><td>—</td><td>Text overlay displayed across the profile</td></tr>
+<tr><td><code>avatar</code></td><td>object</td><td>—</td><td>Avatar type and source</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Splash</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>text</code></td><td>string</td><td><code>""</code></td><td>Overlay text. Empty string hides it.</td></tr>
+<tr><td><code>fontSize</code></td><td>string</td><td><code>"34px"</code></td><td>CSS font size value</td></tr>
+<tr><td><code>fontFamily</code></td><td>string</td><td><code>""</code></td><td>CSS font family. Empty = inherits profile font.</td></tr>
+<tr><td><code>fontWeight</code></td><td>string</td><td><code>"500"</code></td><td>CSS font weight</td></tr>
+<tr><td><code>color</code></td><td>string</td><td><code>""</code></td><td>Text color. Empty = inherits theme text color.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>splash: {
+  text: "guns.lol",
+  fontSize: "34px",
+  fontFamily: "",
+  fontWeight: "500",
+  color: "",
+},</code></pre></div>
+
+<h3>Avatar</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>type</code></td><td>string</td><td><code>"icon"</code></td><td><code>"icon"</code> uses a generated icon. <code>"image"</code> uses a custom image.</td></tr>
+<tr><td><code>src</code></td><td>string</td><td><code>""</code></td><td>Required when <code>type: "image"</code>. Path to the avatar image.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>// Icon mode (default)
+avatar: { type: "icon" },
+
+// Custom image mode
+avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></div>
+
+<h3>Joined Date</h3>
+<p>A simple text string. Set to empty to hide the element entirely.</p>
+<div class="code-block"><span class="lang-label">js</span><pre><code>joinedDate: "Joined over 2 years ago",</code></pre></div>
+</section>
+
+<section id="config-badges" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Configuration</div>
+  <h1>Badges</h1>
+  <p class="hero-desc">12 built-in badge icons with tooltips and custom colors.</p>
+</div>
+
+<p>Badges appear in a row beneath your avatar. Each badge shows an icon with a color tint and displays the badge name in a tooltip on hover.</p>
+
+<h2>Badge fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>name</code></td><td>string</td><td>auto</td><td>Displayed on hover. Auto-derived from icon key if omitted.</td></tr>
+<tr><td><code>icon</code></td><td>string</td><td>—</td><td>Key from the <code>BADGE_SVGS</code> map (see below)</td></tr>
+<tr><td><code>color</code></td><td>string</td><td>auto</td><td>Auto-pulled from <code>BADGE_DEFAULT_COLORS</code> by name. Override with any CSS color.</td></tr>
+<tr><td><code>monochrome</code></td><td>boolean</td><td><code>false</code></td><td>If <code>true</code>, forces white icon with white glow regardless of <code>color</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>You can use just the icon key as a string — <code>name</code> and <code>color</code> are filled automatically:</p>
+<div class="code-block"><span class="lang-label">js</span><pre><code>badges: ["verified", "premium", "booster"],</code></pre></div>
+<p>Or use the full object format for custom names/colors:</p>
+<div class="code-block"><span class="lang-label">js</span><pre><code>badges: [
+  { name: "Custom Badge", icon: "star", color: "#ff4500" },
+],</code></pre></div>
+
+<h3>Available icons</h3>
+<div class="badge-grid">
+  <div class="badge-demo" style="--badge-color:#a749dd"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="23 32 465 448"><path fill="currentColor" d="M396.31 32H264l84.19 112.26L396.31 32zm-280.62 0l48.12 112.26L248 32H115.69zM256 74.67L192 160h128l-64-85.33zm166.95-23.61L376.26 160H488L422.95 51.06zm-333.9 0L23 160h112.74L89.05 51.06zM146.68 192H24l222.8 288h.53L146.68 192zm218.64 0L264.67 480h.53L488 192H365.32zm-35.93 0H182.61L256 400l73.39-208z"></path></svg></span><span>premium</span></div>
+  <div class="badge-demo" style="--badge-color:#ffd700"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="2.3 2 19.39 20"><path fill="currentColor" d="m16.06 13.09l5.63 5.59l-3.32 3.28l-5.59-5.59v-.92l2.36-2.36h.92m.91-2.53L16 9.6l-4.79 4.8v1.97L5.58 22L2.3 18.68l5.59-5.59h1.97l.78-.78L6.8 8.46H5.5L2.69 5.62L5.31 3l2.8 2.8v1.31L12 10.95l2.66-2.66l-.96-1.01L15 5.97h-2.66l-.65-.65L15 2l.66.66v2.66L16.97 4l3.28 3.28c1.09 1.1 1.09 2.89 0 3.98l-1.97-2.01l-1.31 1.31Z"></path></svg></span><span>staff</span></div>
+  <div class="badge-demo" style="--badge-color:#f1bf0f"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="4 3.41 16 17.59"><path fill="currentColor" d="M19 8h-1.81a5.985 5.985 0 0 0-1.82-1.96l.93-.93a.996.996 0 1 0-1.41-1.41l-1.47 1.47C12.96 5.06 12.49 5 12 5s-.96.06-1.41.17L9.11 3.7A.996.996 0 1 0 7.7 5.11l.92.93C7.88 6.55 7.26 7.22 6.81 8H5c-.55 0-1 .45-1 1s.45 1 1 1h1.09c-.05.33-.09.66-.09 1v1H5c-.55 0-1 .45-1 1s.45 1 1 1h1v1c0 .34.04.67.09 1H5c-.55 0-1 .45-1 1s.45 1 1 1h1.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H19c.55 0 1-.45 1-1s-.45-1-1-1h-1.09c.05-.33.09-.66.09-1v-1h1c.55 0 1-.45 1-1s-.45-1-1-1h-1v-1c0-.34-.04-.67-.09-1H19c.55 0 1-.45 1-1s-.45-1-1-1m-6 8h-2c-.55 0-1-.45-1-1s.45-1 1-1h2c.55 0 1 .45 1 1s-.45 1-1 1m0-4h-2c-.55 0-1-.45-1-1s.45-1 1-1h2c.55 0 1 .45 1 1s-.45 1-1 1"></path></svg></span><span>bug</span></div>
+  <div class="badge-demo" style="--badge-color:#ce9347"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="2.18 2.38 19.77 19.77"><path fill="currentColor" d="m2.45 10.575l4.2-4.2q.35-.35.825-.5t.975-.05l1.3.275Q8.4 7.7 7.625 9t-1.5 3.15zm5.125 2.275q.575-1.8 1.563-3.4t2.387-3q2.2-2.2 5.025-3.287t5.275-.663q.425 2.45-.65 5.275T17.9 12.8q-1.375 1.375-3 2.388t-3.425 1.587zm6.9-3q.575.575 1.413.575T17.3 9.85t.575-1.412t-.575-1.413t-1.412-.575t-1.413.575t-.575 1.413t.575 1.412m-.7 12.025l-1.6-3.675q1.85-.725 3.163-1.5t2.912-2.125l.25 1.3q.1.5-.05.988t-.5.837zM4.05 16.05q.875-.875 2.125-.888t2.125.863t.875 2.125t-.875 2.125q-.625.625-2.087 1.075t-4.038.8q.35-2.575.8-4.025T4.05 16.05"></path></svg></span><span>legend</span></div>
+  <div class="badge-demo" style="--badge-color:#4fc3f7"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"></path></svg></span><span>shield</span></div>
+  <div class="badge-demo" style="--badge-color:#ffd700"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></span><span>star</span></div>
+  <div class="badge-demo" style="--badge-color:#ff6f61"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg></span><span>heart</span></div>
+  <div class="badge-demo" style="--badge-color:#ffd700"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M19 4l-3.5 5.5L12 4l-3.5 5.5L5 4v14h14V4z"></path></svg></span><span>crown</span></div>
+  <div class="badge-demo" style="--badge-color:#6783ff"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M23 12l-2.44-2.78l.34-3.68l-3.61-.82l-1.89-3.18L12 3L8.6 1.54L6.71 4.72l-3.61.81l.34 3.68L1 12l2.44 2.78l-.34 3.69l3.61.82l1.89 3.18L12 21l3.4 1.46l1.89-3.18l3.61-.82l-.34-3.68L23 12zm-12.91 6.5l-3.5-3.5l1.41-1.42l2.09 2.09l5.58-5.59L17 11.5l-6.91 7z"></path></svg></span><span>verified</span></div>
+  <div class="badge-demo" style="--badge-color:#ff69b4"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67l-.5-.68C10.96 2.54 10.05 2 9 2C7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83L8.62 12L11 8.76l1-1.36l1 1.36L15.38 12L17 10.83L14.92 8H20v6z"></path></svg></span><span>gift</span></div>
+  <div class="badge-demo" style="--badge-color:#ffd700"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94c.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"></path></svg></span><span>trophy</span></div>
+  <div class="badge-demo" style="--badge-color:#8fd0ff"><span class="bd-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg></span><span>booster</span></div>
+</div>
+
+<div class="callout tip">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  <p>The icon keys map to inline SVG paths in <code>BADGE_SVGS</code> defined in <code>config.js</code>. You can add custom icons by extending the map.</p>
+</div>
+</section>
+
+<section id="config-bio" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Configuration</div>
+  <h1>Bio &amp; Typewriter</h1>
+  <p class="hero-desc">A static bio line or an animated typewriter that cycles through multiple texts.</p>
+</div>
+
+<p>The bio sits below your badges. Choose between a static text line or an animated typewriter that types, pauses, deletes, and repeats through a list of phrases.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>typewriter</code></td><td>boolean</td><td><code>true</code></td><td>Enable animated typewriter. <code>false</code> = static mode.</td></tr>
+<tr><td><code>texts</code></td><td>string[]</td><td><code>["love","sex","hate","disgust"]</code></td><td>Phrases to cycle through (typewriter mode only)</td></tr>
+<tr><td><code>staticBio</code></td><td>string</td><td><code>"disgust"</code></td><td>Static text shown when <code>typewriter: false</code></td></tr>
+<tr><td><code>typeSpeed</code></td><td>number</td><td><code>80</code></td><td>Milliseconds per character when typing</td></tr>
+<tr><td><code>deleteSpeed</code></td><td>number</td><td><code>50</code></td><td>Milliseconds per character when deleting</td></tr>
+<tr><td><code>pauseDuration</code></td><td>number</td><td><code>2000</code></td><td>Milliseconds to pause after typing a phrase</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>bio: {
+  typewriter: true,
+  texts: ["love", "sex", "hate", "disgust"],
+  staticBio: "disgust",
+  typeSpeed: 80,
+  deleteSpeed: 50,
+  pauseDuration: 2000,
+},</code></pre></div>
+
+<h3>How it works</h3>
+<ol>
+<li>First phrase types out, one character at a time (<code>typeSpeed</code> delay per char)</li>
+<li>Pauses for <code>pauseDuration</code> ms</li>
+<li>Deletes each character (<code>deleteSpeed</code> delay per char)</li>
+<li>Moves to the next phrase and repeats</li>
+<li>After the last phrase, loops back to the first</li>
+</ol>
+
+<h3>Static mode</h3>
+<p>Set <code>typewriter: false</code>. The <code>staticBio</code> value renders as plain text with no animation.</p>
+<div class="code-block"><span class="lang-label">js</span><pre><code>bio: {
+  typewriter: false,
+  staticBio: "Just vibing.",
+},</code></pre></div>
+</section>
+
+<section id="config-links" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Configuration</div>
+  <h1>Links</h1>
+  <p class="hero-desc">Social and external link buttons with custom icons.</p>
+</div>
+
+<p>Each link renders as a circular button with an icon image. Clicking opens the URL in a new tab. Links appear in a row beneath the bio.</p>
+
+<h2>Link fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>url</code></td><td>string</td><td>—</td><td>Link destination. Opens in a new tab.</td></tr>
+<tr><td><code>icon</code></td><td>string</td><td>—</td><td>Path to the icon image (PNG, GIF, WebP, SVG)</td></tr>
+<tr><td><code>color</code></td><td>string</td><td><code>""</code></td><td>Drop shadow color for the icon image</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>links: [
+  { url: "https://github.com/6sfy", icon: "src/assets/icons/github.webp", color: "#ffffff" },
+  { url: "https://instagram.com/izayvss", icon: "src/assets/icons/insta.webp", color: "#ffffff" },
+],</code></pre></div>
+
+<div class="callout tip">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  <p>Use square icon images (ideally 64x64 or larger). The button crops them into a circle and applies the <code>color</code> value as a CSS drop-shadow filter.</p>
+</div>
+</section>
+
+<section id="config-audio" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Configuration</div>
+  <h1>Audio Player</h1>
+  <p class="hero-desc">Inline music player with playlist, volume control, and progress bar.</p>
+</div>
+
+<p>The audio player sits inside the profile container. It supports a single track or a playlist, autoplay, looping, a draggable progress bar, and an optional volume slider.</p>
+
+<h2>Audio fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>src</code></td><td>string</td><td><code>""</code></td><td>URL to the audio file (MP3, OGG, WAV)</td></tr>
+<tr><td><code>title</code></td><td>string</td><td><code>"Another One"</code></td><td>Track title shown in the player</td></tr>
+<tr><td><code>artist</code></td><td>string</td><td><code>"DJ Khaled"</code></td><td>Artist name shown below the title</td></tr>
+<tr><td><code>autoplay</code></td><td>boolean</td><td><code>true</code></td><td>Start playing automatically when the page loads</td></tr>
+<tr><td><code>loop</code></td><td>boolean</td><td><code>true</code></td><td>Repeat the track/playlist when it ends</td></tr>
+<tr><td><code>volume</code></td><td>number</td><td><code>0.3</code></td><td>Initial volume (0.0 to 1.0)</td></tr>
+<tr><td><code>showControls</code></td><td>boolean</td><td><code>false</code></td><td>Show native browser audio controls</td></tr>
+<tr><td><code>playlist</code></td><td>array</td><td><code>[]</code></td><td>Additional tracks to queue (see playlist format below)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>audio: {
+  src: "https://example.com/track.mp3",
+  title: "My Track",
+  artist: "Artist Name",
+  autoplay: true,
+  loop: true,
+  volume: 0.3,
+  showControls: false,
+  playlist: [],
+},</code></pre></div>
+
+<h3>Playlist</h3>
+<p>Each playlist entry has the same shape as the main track. Tracks play in order and loop when the playlist ends.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>src</code></td><td>string</td><td>URL to the audio file</td></tr>
+<tr><td><code>title</code></td><td>string</td><td>Track title</td></tr>
+<tr><td><code>artist</code></td><td>string</td><td>Artist name</td></tr>
+</tbody>
+</table>
+</div>
+<div class="code-block"><span class="lang-label">js</span><pre><code>playlist: [
+  { src: "track1.mp3", title: "Song 1", artist: "Artist 1" },
+  { src: "track2.mp3", title: "Song 2", artist: "Artist 2" },
+],</code></pre></div>
+
+<h3>Volume Control</h3>
+<p>A floating volume knob positioned relative to the profile container.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>false</code></td><td>Show the volume slider</td></tr>
+<tr><td><code>position</code></td><td>string</td><td><code>"top-left"</code></td><td>Corner: <code>"top-left"</code>, <code>"top-right"</code>, <code>"bottom-left"</code>, <code>"bottom-right"</code></td></tr>
+</tbody>
+</table>
+</div>
+<div class="code-block"><span class="lang-label">js</span><pre><code>volumeControl: {
+  enabled: true,
+  position: "top-left",
+},</code></pre></div>
+
+<h3>Progress Bar</h3>
+<p>Customizable audio seek bar below the track info.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>height</code></td><td>number</td><td><code>3</code></td><td>Bar height in pixels</td></tr>
+<tr><td><code>radius</code></td><td>number</td><td><code>15</code></td><td>Border radius in pixels</td></tr>
+<tr><td><code>color</code></td><td>string</td><td><code>"#ffffff"</code></td><td>Progress fill color</td></tr>
+<tr><td><code>bgColor</code></td><td>string</td><td><code>"rgba(255,255,255,0.3)"</code></td><td>Track background color</td></tr>
+<tr><td><code>thumbSize</code></td><td>number</td><td><code>10</code></td><td>Draggable thumb diameter in pixels</td></tr>
+<tr><td><code>gradient</code></td><td>array</td><td><code>[]</code></td><td>Gradient color stops. Overrides <code>color</code> if set. Format: <code>["#ff0000", "#00ff00"]</code></td></tr>
+</tbody>
+</table>
+</div>
+<div class="code-block"><span class="lang-label">js</span><pre><code>progressBar: {
+  height: 3,
+  radius: 15,
+  color: "#ffffff",
+  bgColor: "rgba(255,255,255,0.3)",
+  thumbSize: 10,
+  gradient: [],
+},</code></pre></div>
+</section>
+
+<section id="config-layout" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Configuration</div>
+  <h1>Layouts</h1>
+  <p class="hero-desc">5 layout presets that control the overall structure and visual style.</p>
+</div>
+
+<p>The layout determines how your profile content is arranged — avatar position, container styling, spacing, and borders. Switch between presets with a single string.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>type</code></td><td>string</td><td><code>"glass"</code></td><td>Layout preset key (see presets below)</td></tr>
+<tr><td><code>containerWidth</code></td><td>string</td><td><code>"44rem"</code></td><td>Max width of the profile container</td></tr>
+<tr><td><code>containerPadding</code></td><td>string</td><td><code>"26px"</code></td><td>Inner padding of the profile container</td></tr>
+<tr><td><code>containerRadius</code></td><td>string</td><td><code>"20px"</code></td><td>Border radius of the profile container</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>layout: {
+  type: "glass",
+  containerWidth: "44rem",
+  containerPadding: "26px",
+  containerRadius: "20px",
+},</code></pre></div>
+
+<h3>Layout presets</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Preset</th><th>Avatar</th><th>Style</th></tr>
+</thead>
+<tbody>
+<tr><td><code>default</code></td><td>Left</td><td>Standard bordered container with visible background</td></tr>
+<tr><td><code>stacked</code></td><td>Top, centered</td><td>Same as default but avatar and content stack vertically</td></tr>
+<tr><td><code>compact</code></td><td>Left</td><td>Smaller spacing and typography for a tighter feel</td></tr>
+<tr><td><code>minimal</code></td><td>Left</td><td>Transparent container, no border, content floats on background</td></tr>
+<tr><td><code>glass</code></td><td>Left</td><td>Glassmorphism — translucent container with backdrop blur</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="config-theme" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Configuration</div>
+  <h1>Theme</h1>
+  <p class="hero-desc">Colors, fonts, container styling, and button appearance.</p>
+</div>
+
+<p>The theme controls every visual color on the page — text, background, container, buttons, selection highlight, and glow effects. You can use a preset or set every value manually.</p>
+
+<h2>Theme fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>preset</code></td><td>string</td><td><code>""</code></td><td>Preset name: <code>"dark"</code>, <code>"light"</code>, <code>"neon"</code>, <code>"ocean"</code>, or empty for manual</td></tr>
+<tr><td><code>textColor</code></td><td>string</td><td><code>"#ffffff"</code></td><td>Primary text color</td></tr>
+<tr><td><code>backgroundColor</code></td><td>string</td><td><code>"#000000"</code></td><td>Page background color</td></tr>
+<tr><td><code>glowColor</code></td><td>string</td><td><code>"#ffffff"</code></td><td>Color used for glow/shadow effects</td></tr>
+<tr><td><code>usernameEffects</code></td><td>string</td><td><code>""</code></td><td>URL to a GIF applied as a mask/background on the username text</td></tr>
+<tr><td><code>containerColor</code></td><td>string</td><td><code>"rgba(255,255,255,0)"</code></td><td>Profile container background</td></tr>
+<tr><td><code>containerBlur</code></td><td>string</td><td><code>"0px"</code></td><td>Backdrop blur on the container (glass effect)</td></tr>
+<tr><td><code>containerBorderWidth</code></td><td>string</td><td><code>"2px"</code></td><td>Container border width</td></tr>
+<tr><td><code>containerBorderColor</code></td><td>string</td><td><code>"rgba(200,130,255,0.5)"</code></td><td>Container border color</td></tr>
+<tr><td><code>selectionBg</code></td><td>string</td><td><code>"#ffffff"</code></td><td>Text selection background color</td></tr>
+<tr><td><code>selectionColor</code></td><td>string</td><td><code>"#000000"</code></td><td>Text selection text color</td></tr>
+<tr><td><code>buttonBg</code></td><td>string</td><td><code>"rgba(255,255,255,0.22)"</code></td><td>Link button background</td></tr>
+<tr><td><code>buttonBgHover</code></td><td>string</td><td><code>"rgba(255,255,255,0.32)"</code></td><td>Link button background on hover</td></tr>
+<tr><td><code>buttonBorder</code></td><td>string</td><td><code>"2px solid rgba(255,255,255,0.12)"</code></td><td>Link button border</td></tr>
+<tr><td><code>buttonRadius</code></td><td>string</td><td><code>"12px"</code></td><td>Link button border radius</td></tr>
+<tr><td><code>volumeBg</code></td><td>string</td><td><code>"rgba(255,255,255,0.2)"</code></td><td>Volume slider background</td></tr>
+<tr><td><code>volumeBorder</code></td><td>string</td><td><code>"2px solid rgba(255,255,255,0.05)"</code></td><td>Volume slider border</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>theme: {
+  preset: "",
+  textColor: "#ffffff",
+  backgroundColor: "#000000",
+  glowColor: "#ffffff",
+  usernameEffects: "",
+  containerColor: "rgba(255, 255, 255, 0)",
+  containerBlur: "0px",
+  containerBorderWidth: "2px",
+  containerBorderColor: "rgba(200, 130, 255, 0.5)",
+  selectionBg: "#ffffff",
+  selectionColor: "#000000",
+  buttonBg: "rgba(255, 255, 255, 0.22)",
+  buttonBgHover: "rgba(255, 255, 255, 0.32)",
+  buttonBorder: "2px solid rgba(255, 255, 255, 0.12)",
+  buttonRadius: "12px",
+  volumeBg: "rgba(255, 255, 255, 0.2)",
+  volumeBorder: "2px solid rgba(255, 255, 255, 0.05)",
+},</code></pre></div>
+
+<h3>Theme presets</h3>
+<p>Set <code>preset</code> to one of these to auto-fill all theme values. Leave empty to define everything manually.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Preset</th><th>Vibe</th></tr>
+</thead>
+<tbody>
+<tr><td><code>"dark"</code></td><td>Black background, white text, purple container border</td></tr>
+<tr><td><code>"light"</code></td><td>White background, dark text, light borders</td></tr>
+<tr><td><code>"neon"</code></td><td>Dark background with bright cyan/magenta accents</td></tr>
+<tr><td><code>"ocean"</code></td><td>Dark blue background with teal and cyan tones</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Fonts</h3>
+<p>Custom font families loaded via <code>@import</code> or Google Fonts.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>true</code></td><td>Enable custom fonts</td></tr>
+<tr><td><code>families</code></td><td>string[]</td><td><code>["Array","Onest"]</code></td><td>Font family names in priority order</td></tr>
+<tr><td><code>importUrl</code></td><td>string</td><td><code>""</code></td><td>Optional @import URL for the font (Google Fonts, etc.)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="code-block"><span class="lang-label">js</span><pre><code>fonts: {
+  enabled: true,
+  families: ["Array", "Onest"],
+  importUrl: "",
+},</code></pre></div>
+</section>
+
+<section id="config-background" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Configuration</div>
+  <h1>Background</h1>
+  <p class="hero-desc">Color, image, and animated canvas effects that run behind your profile.</p>
+</div>
+
+<p>The background fills the full viewport behind the profile container. You can set a solid color, an image via URL, and layer up to 7 canvas-based effects on top.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>src</code></td><td>string</td><td><code>""</code></td><td>Background image URL. Empty = no image.</td></tr>
+<tr><td><code>color</code></td><td>string</td><td><code>"#000000"</code></td><td>Solid background color (visible behind effects)</td></tr>
+<tr><td><code>effects</code></td><td>object</td><td>—</td><td>Toggle canvas effects on/off</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>background: {
+  src: "",
+  color: "#000000",
+  effects: { aurora: true, dither: false, plasma: false, snow: false, rain: false, stars: true, fireflies: false },
+},</code></pre></div>
+
+<h3>Available effects</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Effect</th><th>Description</th><th>Performance</th></tr>
+</thead>
+<tbody>
+<tr><td><code>aurora</code></td><td>Slowly shifting aurora borealis with multiple colored bands</td><td>Medium</td></tr>
+<tr><td><code>stars</code></td><td>Scrolling star field with parallax depth layers</td><td>Light</td></tr>
+<tr><td><code>snow</code></td><td>Falling snowflakes with varying size and speed</td><td>Light</td></tr>
+<tr><td><code>rain</code></td><td>Rain streaks falling diagonally</td><td>Light</td></tr>
+<tr><td><code>plasma</code></td><td>Animated plasma color swirls</td><td>Heavy</td></tr>
+<tr><td><code>fireflies</code></td><td>Small glowing particles floating with organic motion</td><td>Medium</td></tr>
+<tr><td><code>dither</code></td><td>Dithering noise overlay for a retro/vaporwave look</td><td>Light</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warn">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12" y2="17"/></svg>
+  <p>Multiple effects can impact performance, especially on low-end devices. The page auto-detects hardware capability and scales down effects when needed. Disable effects you don't need to keep things smooth.</p>
+</div>
+</section>
+
+<section id="effect-mouse" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Effects</div>
+  <h1>Mouse Effects</h1>
+  <p class="hero-desc">4 visual feedback effects that respond to cursor movement and clicks.</p>
+</div>
+
+<p>A canvas-based effect that follows or reacts to your mouse. Choose from trail, particles, glow, or ripple variants. Only one variant can be active at a time.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>true</code></td><td>Enable the mouse effect</td></tr>
+<tr><td><code>variant</code></td><td>string</td><td><code>"particles"</code></td><td>Effect type: <code>"trail"</code>, <code>"particles"</code>, <code>"glow"</code>, or <code>"ripple"</code></td></tr>
+<tr><td><code>color</code></td><td>string</td><td><code>"#ffffff"</code></td><td>Color of the effect elements</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>mouseEffect: {
+  enabled: true,
+  variant: "particles",
+  color: "#ffffff",
+},</code></pre></div>
+
+<h3>Variants</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Variant</th><th>Behavior</th></tr>
+</thead>
+<tbody>
+<tr><td><code>trail</code></td><td>Fading circles follow behind the cursor like a comet tail</td></tr>
+<tr><td><code>particles</code></td><td>Velocity-based particle bursts — faster movement emits more particles in 360° spread</td></tr>
+<tr><td><code>glow</code></td><td>Soft radial gradient glow that follows the cursor</td></tr>
+<tr><td><code>ripple</code></td><td>Expanding ring ripples emit on click</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout tip">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  <p><strong>Performance:</strong> <code>particles</code> is the heaviest variant. The page auto-limits particle count on low-end devices. Switch to <code>trail</code> or <code>glow</code> for better performance.</p>
+</div>
+</section>
+
+<section id="effect-card3d" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Effects</div>
+  <h1>3D Card Tilt</h1>
+  <p class="hero-desc">Interactive perspective tilt that follows mouse position over the profile card.</p>
+</div>
+
+<p>The profile container rotates in 3D space based on the mouse position relative to its center. Creates a physical, dimensional feel — like holding a card and tilting it toward the light.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>true</code></td><td>Enable 3D tilt</td></tr>
+<tr><td><code>intensity</code></td><td>number</td><td><code>8</code></td><td>Maximum tilt angle in degrees. Higher = more dramatic rotation.</td></tr>
+<tr><td><code>perspective</code></td><td>number</td><td><code>1000</code></td><td>CSS perspective value in pixels. Lower = stronger depth distortion.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>card3d: {
+  enabled: true,
+  intensity: 8,
+  perspective: 1000,
+},</code></pre></div>
+
+<div class="callout tip">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  <p>Try <code>intensity: 15</code> with <code>perspective: 600</code> for a more exaggerated tilt. Lower <code>intensity</code> to <code>3</code> for a subtle, premium feel.</p>
+</div>
+</section>
+
+<section id="effect-cursor" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Effects</div>
+  <h1>Custom Cursor</h1>
+  <p class="hero-desc">Replace the system cursor with a custom image.</p>
+</div>
+
+<p>Hides the browser's default cursor and uses a PNG image instead. Applies to the entire page.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>true</code></td><td>Enable custom cursor</td></tr>
+<tr><td><code>src</code></td><td>string</td><td><code>""</code></td><td>Path to a PNG cursor image</td></tr>
+<tr><td><code>hotspotX</code></td><td>number</td><td><code>16</code></td><td>X coordinate of the click hotspot (pixels from left)</td></tr>
+<tr><td><code>hotspotY</code></td><td>number</td><td><code>16</code></td><td>Y coordinate of the click hotspot (pixels from top)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>cursor: {
+  enabled: true,
+  src: "src/assets/cursor/cursor.png",
+  hotspotX: 16,
+  hotspotY: 16,
+},</code></pre></div>
+
+<div class="callout tip">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  <p>For a centered cursor (like crosshair), set hotspot to half the image dimensions. For a pointer tip cursor, set hotspot near the top-left (e.g., <code>hotspotX: 2, hotspotY: 2</code>).</p>
+</div>
+</section>
+
+<section id="effect-shuffle" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Effects</div>
+  <h1>Shuffle Text</h1>
+  <p class="hero-desc">Matrix-style character scramble animation on the username.</p>
+</div>
+
+<p>The username text cycles through random letters before settling on the final value. Creates a hacker/matrix aesthetic. Works best with a monospace or pixel font.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>false</code></td><td>Enable shuffle animation on page load</td></tr>
+<tr><td><code>text</code></td><td>string</td><td><code>"SIXFY"</code></td><td>The text to animate (overrides <code>username</code> for this effect)</td></tr>
+<tr><td><code>fontFamily</code></td><td>string</td><td><code>"Press Start 2P"</code></td><td>Font used during the shuffle animation</td></tr>
+<tr><td><code>fontSize</code></td><td>string</td><td><code>"4rem"</code></td><td>Font size during the animation</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>shuffleText: {
+  enabled: true,
+  text: "SIXFY",
+  fontFamily: "Press Start 2P",
+  fontSize: "4rem",
+},</code></pre></div>
+
+<div class="callout info">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+  <p>The shuffle effect only runs once on page load. After settling, the username displays normally using the profile's configured font.</p>
+</div>
+</section>
+
+
+
+<section id="effect-particles" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Effects</div>
+  <h1>Particle System</h1>
+  <p class="hero-desc">Velocity-based particle engine used by the mouse <em>particles</em> variant.</p>
+</div>
+
+<p>The particle system powers the <code>particles</code> variant of <a href="#" onclick="showSection('effect-mouse');return false">Mouse Effects</a>. It's a real-time particle engine with gravity, friction, and velocity response — faster mouse movement produces more particles.</p>
+
+<h2>Behavior</h2>
+<ul>
+<li><strong>Velocity response:</strong> Moving the mouse faster emits more particles. Slow movement produces fewer, larger particles.</li>
+<li><strong>360° spread:</strong> Particles emit in all directions from the cursor position.</li>
+<li><strong>Gravity &amp; friction:</strong> Particles arc downward with simulated gravity and gradually slow down before fading out.</li>
+<li><strong>Auto-scaling:</strong> Low-end devices get fewer max particles to maintain frame rate.</li>
+<li><strong>Customizable color:</strong> Set via <code>mouseEffect.color</code> in the config.</li>
+</ul>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>mouseEffect: {
+  enabled: true,
+  variant: "particles",
+  color: "#a749dd",
+},</code></pre></div>
+
+<div class="callout info">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+  <p>Configure the particle system via the <a href="#" onclick="showSection('effect-mouse');return false">Mouse Effects</a> section. The particle variant is selected by <code>variant: "particles"</code>.</p>
+</div>
+</section>
+
+
+
+<section id="extra-location" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Extra Sections</div>
+  <h1>Location</h1>
+  <p class="hero-desc">A location pin with live timezone clock.</p>
+</div>
+
+<p>Shows a pin icon with a location label and a live digital clock that updates every second based on the configured timezone.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>false</code></td><td>Show the location section</td></tr>
+<tr><td><code>text</code></td><td>string</td><td><code>"guns.lol HQ"</code></td><td>Location label text (e.g., city name or "Remote")</td></tr>
+<tr><td><code>timezone</code></td><td>string</td><td><code>"Europe/Berlin"</code></td><td>IANA timezone identifier for the live clock</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>location: {
+  enabled: true,
+  text: "guns.lol HQ",
+  timezone: "Europe/Berlin",
+},</code></pre></div>
+
+<div class="callout info">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+  <p>Timezone uses IANA format (e.g. <code>"America/New_York"</code>, <code>"Asia/Tokyo"</code>). The clock updates every second using the browser's <code>Intl.DateTimeFormat</code>.</p>
+</div>
+</section>
+
+<section id="extra-about" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Extra Sections</div>
+  <h1>About</h1>
+  <p class="hero-desc">A short text section for a personal message or tagline.</p>
+</div>
+
+<p>Displays a block of text beneath your profile. Great for a short bio, tagline, or description.</p>
+
+<h2>Fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>false</code></td><td>Show the about section</td></tr>
+<tr><td><code>text</code></td><td>string</td><td><code>"Hi. I own guns.lol."</code></td><td>About text content</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>about: { enabled: true, text: "Hi. I own guns.lol." },</code></pre></div>
+</section>
+
+<section id="extra-portfolio" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Extra Sections</div>
+  <h1>Portfolio</h1>
+  <p class="hero-desc">A skills and projects showcase section.</p>
+</div>
+
+<p>Displays your skills as tags and your projects as clickable cards. Each project links to its URL in a new tab.</p>
+
+<h2>Portfolio fields</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>enabled</code></td><td>boolean</td><td><code>false</code></td><td>Show the portfolio section</td></tr>
+<tr><td><code>skills</code></td><td>string[]</td><td><code>["Python","JavaScript"]</code></td><td>List of skill names displayed as tags</td></tr>
+<tr><td><code>projects</code></td><td>array</td><td>—</td><td>List of project entries (see below)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Project entry</h3>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>name</code></td><td>string</td><td>Project display name</td></tr>
+<tr><td><code>description</code></td><td>string</td><td>Short project description</td></tr>
+<tr><td><code>url</code></td><td>string</td><td>Project link (opens in new tab)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>portfolio: {
+  enabled: true,
+  skills: ["Python", "JavaScript", "TypeScript"],
+  projects: [
+    {
+      name: "guns.lol",
+      description: "Create feature-rich, customizable link-in-bio pages.",
+      url: "https://guns.lol",
+    },
+  ],
+},</code></pre></div>
+</section>
+
+<section id="troubleshooting" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Reference</div>
+  <h1>Troubleshooting</h1>
+  <p class="hero-desc">Common issues and how to fix them.</p>
+</div>
+
+<h2>Blank page / nothing shows</h2>
+<ul>
+<li>Make sure <code>src/js/config.js</code> loads before <code>main.js</code> in the HTML</li>
+<li>Check the browser console (F12) for JavaScript errors</li>
+<li>Verify <code>CONFIG</code> is defined and valid — missing commas or brackets will break the script</li>
+</ul>
+
+<div class="callout info">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg>
+  <p>The HTML already has the correct script order. If you restructured the files, make sure <code>config.js</code> loads before <code>main.js</code>.</p>
+</div>
+
+<h2>Effects not working</h2>
+<ul>
+<li>Effects require <code>enabled: true</code> in their config object</li>
+<li>Background canvas effects stop if hardware acceleration is disabled in browser settings</li>
+</ul>
+
+<h2>Images not loading</h2>
+<ul>
+<li>Use relative paths from <code>index.html</code>, not from the config file location</li>
+<li>Check that file paths exist and extensions match (case-sensitive on some servers)</li>
+<li>Link icon images should be ~64x64px for best appearance</li>
+</ul>
+
+<h2>Audio not playing</h2>
+<ul>
+<li>Browsers block <code>autoplay</code> until the user interacts with the page. Click anywhere first.</li>
+<li>Use a direct MP3 URL (not a streaming page or playlist link)</li>
+<li>Check that the audio file supports CORS if hosted on a different domain</li>
+</ul>
+
+<h2>Performance issues</h2>
+<ul>
+<li>Disable background effects you don't need — <code>plasma</code> is the heaviest</li>
+<li>Use <code>trail</code> or <code>glow</code> mouse effects instead of <code>particles</code> on low-end devices</li>
+<li>The page auto-detects low-end hardware and scales effects, but manual tuning helps</li>
+</ul>
+
+<h2>Config not applying</h2>
+<ul>
+<li>Refresh the page (hard refresh: <strong>Ctrl+Shift+R</strong> / <strong>Cmd+Shift+R</strong>)</li>
+<li>Check for JSON syntax errors in the config file</li>
+<li>Some config changes (layout, theme) restructure the DOM — a full refresh may be needed</li>
+</ul>
+</section>
+
+<section id="example-complete" class="doc-section">
+<h2>Complete Config Example</h2>
+
+<div class="code-block"><span class="lang-label">js</span><pre><code>const CONFIG = {
+  username: "Sixfy",
+  uid: "20,028",
+  splash: { text: "guns.lol", fontSize: "34px", fontFamily: "", fontWeight: "500", color: "" },
+  avatar: { type: "icon" },
+  bio: {
+    typewriter: true,
+    texts: ["love", "sex", "hate", "disgust"],
+    staticBio: "disgust",
+    typeSpeed: 80,
+    deleteSpeed: 50,
+    pauseDuration: 2000,
+  },
+  joinedDate: "Joined over 2 years ago",
+  badges: ["premium", "staff", "bug", "verified"],
+  links: [
+    { url: "https://example.com", icon: "src/assets/icons/icon.png", color: "#ffffff" },
+  ],
+  views: 644,
+  audio: {
+    src: "https://example.com/track.mp3",
+    title: "Another One",
+    artist: "DJ Khaled",
+    autoplay: true,
+    loop: true,
+    volume: 0.3,
+    showControls: false,
+    playlist: [],
+  },
+  volumeControl: { enabled: false, position: "top-left" },
+  progressBar: {
+    height: 3, radius: 15, color: "#ffffff",
+    bgColor: "rgba(255,255,255,0.3)", thumbSize: 10, gradient: [],
+  },
+  cursor: {
+    enabled: true,
+    src: "src/assets/cursor/cursor.png",
+    hotspotX: 16, hotspotY: 16,
+  },
+  mouseEffect: { enabled: true, variant: "particles", color: "#ffffff" },
+  card3d: { enabled: true, intensity: 8, perspective: 1000 },
+  fonts: { enabled: true, families: ["Array", "Onest"], importUrl: "" },
+  shuffleText: { enabled: false, text: "SIXFY", fontFamily: "Press Start 2P", fontSize: "4rem" },
+  layout: { type: "glass", containerWidth: "44rem", containerPadding: "26px", containerRadius: "20px" },
+  location: { enabled: false, text: "guns.lol HQ", timezone: "Europe/Berlin" },
+  about: { enabled: false, text: "Hi. I own guns.lol." },
+  portfolio: {
+    enabled: false,
+    skills: ["Python", "JavaScript"],
+    projects: [{ name: "guns.lol", description: "Create feature-rich, customizable and modern link-in-bio pages.", url: "https://guns.lol" }],
+  },
+  theme: {
+    preset: "",
+    textColor: "#ffffff",
+    backgroundColor: "#000000",
+    glowColor: "#ffffff",
+    usernameEffects: "",
+    containerColor: "rgba(255, 255, 255, 0)",
+    containerBlur: "0px",
+    containerBorderWidth: "2px",
+    containerBorderColor: "rgba(200, 130, 255, 0.5)",
+    selectionBg: "#ffffff",
+    selectionColor: "#000000",
+    buttonBg: "rgba(255, 255, 255, 0.22)",
+    buttonBgHover: "rgba(255, 255, 255, 0.32)",
+    buttonBorder: "2px solid rgba(255, 255, 255, 0.12)",
+    buttonRadius: "12px",
+    volumeBg: "rgba(255, 255, 255, 0.2)",
+    volumeBorder: "2px solid rgba(255, 255, 255, 0.05)",
+  },
+  background: { src: "", color: "#000000", effects: { aurora: true, dither: false, plasma: false, snow: false, rain: false, stars: true, fireflies: false } },
+};</code></pre></div>
+</section>
+
+<section id="changelog" class="doc-section">
+<div class="section-hero">
+  <div class="hero-badge">Updates</div>
+  <h1>Changelog</h1>
+  <p class="hero-desc">Recent changes to the guns.lol profile clone.</p>
+</div>
+
+<h2>2026-07-03</h2>
+<ul>
+<li>Initial release &amp; docs site launch.</li>
+</ul>
+</section>
+
+  </div>
+</div>
+
+<button id="backTop" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script defer src="js/doc.js"></script>
+</body>
+</html>
