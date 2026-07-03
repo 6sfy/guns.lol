@@ -325,8 +325,7 @@
   // ─── Theme toggle ───
   var themeBtn = document.getElementById("themeToggle");
   var html = document.documentElement;
-  var saved = localStorage.getItem("docs-theme");
-  if (saved) html.setAttribute("data-theme", saved);
+  html.setAttribute("data-theme", localStorage.getItem("docs-theme") || "light");
   if (themeBtn) {
     themeBtn.addEventListener("click", function () {
       var cur = html.getAttribute("data-theme") || "dark";
