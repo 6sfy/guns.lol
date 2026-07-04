@@ -28,7 +28,7 @@
 > [!CAUTION]
 > **Using this project may violate the guns.lol Terms of Service. Use at your own risk.**
 
-### <strong>[Documentation →](6sfy.github.io)</strong>
+### <strong>[Documentation →](https://6sfy.github.io/guns.lol/)</strong>
 
 ### <strong>[Example Config](https://github.com/6sfy/guns.lol/blob/main/src/js/config.js)</strong>
 
@@ -94,7 +94,7 @@ npx serve .
 ## Contributing
 
 - Before creating an issue, please ensure that it hasn't already been reported/suggested, and double-check the
-[documentation](https://docs.sexcaller.lol).
+[documentation](https://6sfy.github.io/guns.lol/).
 - Fork the repo, make your changes, and submit a pull request.
 
 ## Need help?
