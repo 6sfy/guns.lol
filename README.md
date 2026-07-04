@@ -28,7 +28,7 @@
 > [!CAUTION]
 > **Using this project may violate the guns.lol Terms of Service. Use at your own risk.**
 
-### <strong>[Documentation →](https://docs.sexcaller.lol)</strong>
+### <strong>[Documentation →](6sfy.github.io)</strong>
 
 ### <strong>[Example Config](https://github.com/6sfy/guns.lol/blob/main/src/js/config.js)</strong>
 
