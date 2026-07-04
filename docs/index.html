@@ -232,7 +232,7 @@
 
 <h3>1. Get the project</h3>
 <p>Clone or download the repository. The project is a flat file structure — no framework, no bundler.</p>
-<div class="code-block"><span class="lang-label">sh</span><pre><code>git clone https://github.com/6sfy/guns.lol.git
+<div class="code-block" data-lang="sh"><pre><code>git clone https://github.com/6sfy/guns.lol.git
 cd guns.lol</code></pre></div>
 
 <h3>2. Open the config file</h3>
@@ -240,7 +240,7 @@ cd guns.lol</code></pre></div>
 
 <h3>3. Set your identity</h3>
 <p>Change the display name and user ID to your own.</p>
-<div class="code-block"><span class="lang-label">js</span><pre><code>const CONFIG = {
+<div class="code-block" data-lang="js"><pre><code>const CONFIG = {
   username: "YourName",
   uid: "12,345",
   joinedDate: "Joined 3 months ago",
@@ -249,16 +249,16 @@ cd guns.lol</code></pre></div>
 
 <h3>4. Add badges</h3>
 <p>Badges appear beneath your avatar. Just use the icon key — color and name are automatic.</p>
-<div class="code-block"><span class="lang-label">js</span><pre><code>badges: ["verified", "premium"],</code></pre></div>
+<div class="code-block" data-lang="js"><pre><code>badges: ["verified", "premium"],</code></pre></div>
 
 <h3>5. Add links</h3>
 <p>Each link gets an icon image and a shadow color.</p>
-<div class="code-block"><span class="lang-label">js</span><pre><code>links: [
+<div class="code-block" data-lang="js"><pre><code>links: [
   { url: "https://github.com/YourName", icon: "src/assets/icons/icon.png", color: "#ffffff" },
 ],</code></pre></div>
 
 <h3>6. Choose a layout and theme</h3>
-<div class="code-block"><span class="lang-label">js</span><pre><code>layout: { type: "glass", containerWidth: "44rem" },
+<div class="code-block" data-lang="js"><pre><code>layout: { type: "glass", containerWidth: "44rem" },
 theme: { preset: "dark" },</code></pre></div>
 
 <h3>7. Open in browser</h3>
@@ -272,7 +272,7 @@ theme: { preset: "dark" },</code></pre></div>
 
 <h3>Minimal working config</h3>
 <p>This is the smallest config that produces a working profile page.</p>
-<div class="code-block"><span class="lang-label">js</span><pre><code>const CONFIG = {
+<div class="code-block" data-lang="js"><pre><code>const CONFIG = {
   username: "YourName",
   uid: "12,345",
   splash: { text: "hello", fontSize: "34px" },
@@ -295,7 +295,7 @@ theme: { preset: "dark" },</code></pre></div>
   <p class="hero-desc">How the project is organized and how it works.</p>
 </div>
 
-<div class="code-block"><span class="lang-label">text</span><pre><code>guns.lol/
+<div class="code-block" data-lang="text"><pre><code>guns.lol/
 &#x251C;&#x2500;&#x2500; index.html              # Entry point — open this in your browser
 &#x251C;&#x2500;&#x2500; src/
 &#x2502;   &#x251C;&#x2500;&#x2500; js/
@@ -334,7 +334,7 @@ theme: { preset: "dark" },</code></pre></div>
 
 <p>Here is the actual <code>config.js</code> with all default values — use it as your starting template:</p>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>const CONFIG = {
+<div class="code-block" data-lang="js"><pre><code>const CONFIG = {
   username: "Sixfy",
   uid: "20,028",
   splash: { text: "guns.lol", fontSize: "34px", fontFamily: "", fontWeight: "500", color: "" },
@@ -436,7 +436,7 @@ theme: { preset: "dark" },</code></pre></div>
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>splash: {
+<div class="code-block" data-lang="js"><pre><code>splash: {
   text: "guns.lol",
   fontSize: "34px",
   fontFamily: "",
@@ -457,7 +457,7 @@ theme: { preset: "dark" },</code></pre></div>
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>// Icon mode (default)
+<div class="code-block" data-lang="js"><pre><code>// Icon mode (default)
 avatar: { type: "icon" },
 
 // Custom image mode
@@ -465,7 +465,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 
 <h3>Joined Date</h3>
 <p>A simple text string. Set to empty to hide the element entirely.</p>
-<div class="code-block"><span class="lang-label">js</span><pre><code>joinedDate: "Joined over 2 years ago",</code></pre></div>
+<div class="code-block" data-lang="js"><pre><code>joinedDate: "Joined over 2 years ago",</code></pre></div>
 </section>
 
 <section id="config-badges" class="doc-section">
@@ -493,9 +493,9 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </div>
 
 <p>You can use just the icon key as a string — <code>name</code> and <code>color</code> are filled automatically:</p>
-<div class="code-block"><span class="lang-label">js</span><pre><code>badges: ["verified", "premium", "booster"],</code></pre></div>
+<div class="code-block" data-lang="js"><pre><code>badges: ["verified", "premium", "booster"],</code></pre></div>
 <p>Or use the full object format for custom names/colors:</p>
-<div class="code-block"><span class="lang-label">js</span><pre><code>badges: [
+<div class="code-block" data-lang="js"><pre><code>badges: [
   { name: "Custom Badge", icon: "star", color: "#ff4500" },
 ],</code></pre></div>
 
@@ -547,7 +547,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>bio: {
+<div class="code-block" data-lang="js"><pre><code>bio: {
   typewriter: true,
   texts: ["love", "sex", "hate", "disgust"],
   staticBio: "disgust",
@@ -567,7 +567,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 
 <h3>Static mode</h3>
 <p>Set <code>typewriter: false</code>. The <code>staticBio</code> value renders as plain text with no animation.</p>
-<div class="code-block"><span class="lang-label">js</span><pre><code>bio: {
+<div class="code-block" data-lang="js"><pre><code>bio: {
   typewriter: false,
   staticBio: "Just vibing.",
 },</code></pre></div>
@@ -596,7 +596,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>links: [
+<div class="code-block" data-lang="js"><pre><code>links: [
   { url: "https://github.com/6sfy", icon: "src/assets/icons/github.webp", color: "#ffffff" },
   { url: "https://instagram.com/izayvss", icon: "src/assets/icons/insta.webp", color: "#ffffff" },
 ],</code></pre></div>
@@ -635,7 +635,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>audio: {
+<div class="code-block" data-lang="js"><pre><code>audio: {
   src: "https://example.com/track.mp3",
   title: "My Track",
   artist: "Artist Name",
@@ -660,7 +660,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </tbody>
 </table>
 </div>
-<div class="code-block"><span class="lang-label">js</span><pre><code>playlist: [
+<div class="code-block" data-lang="js"><pre><code>playlist: [
   { src: "track1.mp3", title: "Song 1", artist: "Artist 1" },
   { src: "track2.mp3", title: "Song 2", artist: "Artist 2" },
 ],</code></pre></div>
@@ -678,7 +678,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </tbody>
 </table>
 </div>
-<div class="code-block"><span class="lang-label">js</span><pre><code>volumeControl: {
+<div class="code-block" data-lang="js"><pre><code>volumeControl: {
   enabled: true,
   position: "top-left",
 },</code></pre></div>
@@ -700,7 +700,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </tbody>
 </table>
 </div>
-<div class="code-block"><span class="lang-label">js</span><pre><code>progressBar: {
+<div class="code-block" data-lang="js"><pre><code>progressBar: {
   height: 3,
   radius: 15,
   color: "#ffffff",
@@ -734,7 +734,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>layout: {
+<div class="code-block" data-lang="js"><pre><code>layout: {
   type: "glass",
   containerWidth: "44rem",
   containerPadding: "26px",
@@ -795,7 +795,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>theme: {
+<div class="code-block" data-lang="js"><pre><code>theme: {
   preset: "",
   textColor: "#ffffff",
   backgroundColor: "#000000",
@@ -845,7 +845,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </tbody>
 </table>
 </div>
-<div class="code-block"><span class="lang-label">js</span><pre><code>fonts: {
+<div class="code-block" data-lang="js"><pre><code>fonts: {
   enabled: true,
   families: ["Array", "Onest"],
   importUrl: "",
@@ -875,7 +875,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>background: {
+<div class="code-block" data-lang="js"><pre><code>background: {
   src: "",
   color: "#000000",
   effects: { aurora: true, dither: false, plasma: false, snow: false, rain: false, stars: true, fireflies: false },
@@ -928,7 +928,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>mouseEffect: {
+<div class="code-block" data-lang="js"><pre><code>mouseEffect: {
   enabled: true,
   variant: "particles",
   color: "#ffffff",
@@ -978,7 +978,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>card3d: {
+<div class="code-block" data-lang="js"><pre><code>card3d: {
   enabled: true,
   intensity: 8,
   perspective: 1000,
@@ -1014,7 +1014,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>cursor: {
+<div class="code-block" data-lang="js"><pre><code>cursor: {
   enabled: true,
   src: "src/assets/cursor/cursor.png",
   hotspotX: 16,
@@ -1051,7 +1051,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>shuffleText: {
+<div class="code-block" data-lang="js"><pre><code>shuffleText: {
   enabled: true,
   text: "SIXFY",
   fontFamily: "Press Start 2P",
@@ -1084,7 +1084,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 <li><strong>Customizable color:</strong> Set via <code>mouseEffect.color</code> in the config.</li>
 </ul>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>mouseEffect: {
+<div class="code-block" data-lang="js"><pre><code>mouseEffect: {
   enabled: true,
   variant: "particles",
   color: "#a749dd",
@@ -1121,7 +1121,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>location: {
+<div class="code-block" data-lang="js"><pre><code>location: {
   enabled: true,
   text: "guns.lol HQ",
   timezone: "Europe/Berlin",
@@ -1155,7 +1155,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>about: { enabled: true, text: "Hi. I own guns.lol." },</code></pre></div>
+<div class="code-block" data-lang="js"><pre><code>about: { enabled: true, text: "Hi. I own guns.lol." },</code></pre></div>
 </section>
 
 <section id="extra-portfolio" class="doc-section">
@@ -1195,7 +1195,7 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 </table>
 </div>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>portfolio: {
+<div class="code-block" data-lang="js"><pre><code>portfolio: {
   enabled: true,
   skills: ["Python", "JavaScript", "TypeScript"],
   projects: [
@@ -1260,12 +1260,113 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 <li>Check for JSON syntax errors in the config file</li>
 <li>Some config changes (layout, theme) restructure the DOM — a full refresh may be needed</li>
 </ul>
+
+<h2>Layout looks wrong / card broken</h2>
+<ul>
+<li>The <code>card3d</code> effect can clash with custom layouts — try setting <code>card3d.enabled: false</code> if the card container looks shifted or clipped</li>
+<li>Make sure <code>containerWidth</code> isn't too narrow for your content (minimum ~32rem on desktop)</li>
+<li>The <code>glass</code> layout requires <code>containerBlur</code> to be set (default <code>0px</code> disables the glass effect entirely)</li>
+<li>If the card overflows on mobile, set <code>containerPadding</code> lower (e.g., <code>16px</code>)</li>
+</ul>
+
+<h2>Fonts not showing</h2>
+<ul>
+<li>Custom fonts require an active internet connection for the first load (they're loaded live from Google Fonts or external URLs)</li>
+<li>If using <code>importUrl</code>, make sure it's a valid CSS <code>@import</code> URL (e.g., <code>https://fonts.googleapis.com/css2?family=...</code>)</li>
+<li>Font names in <code>families</code> must match exactly what the imported stylesheet declares — check for typos or missing spaces</li>
+<li>Set <code>fonts.enabled: false</code> if you want to fall back to the system font stack</li>
+</ul>
+
+<h2>Shuffle text not animating</h2>
+<ul>
+<li><code>shuffleText.enabled</code> must be <code>true</code> (it's <code>false</code> by default)</li>
+<li>The animation runs once on page load and then settles — you won't see it again until you hard refresh</li>
+<li>It requires a font that supports the characters you're using; try <code>Press Start 2P</code> or another monospace/pixel font</li>
+<li>The effect overrides the username during the animation — if <code>username</code> is too long, the shuffle may look cut off with the default font size</li>
+</ul>
+
+<h2>Custom cursor not showing</h2>
+<ul>
+<li>Verify <code>cursor.enabled: true</code> and a valid <code>src</code> path to a PNG file</li>
+<li>The path is relative to <code>index.html</code>, not to <code>config.js</code></li>
+<li>Some browsers disable custom cursors in certain UI elements (form inputs, iframes) — this is normal</li>
+<li>PNG with transparency works best; avoid JPEG or BMP</li>
+<li>If the cursor appears tiny or giant, adjust <code>hotspotX</code> and <code>hotspotY</code> to match the image dimensions</li>
+</ul>
+
+<h2>3D card tilt not working</h2>
+<ul>
+<li>Make sure <code>card3d.enabled: true</code></li>
+<li>The tilt only activates on devices with a mouse — touch devices don't trigger hover, so the effect stays flat</li>
+<li>If the card jumps or glitches on hover, lower <code>intensity</code> (try <code>4</code>) or raise <code>perspective</code> (try <code>1500</code>)</li>
+<li>Some layouts (<code>minimal</code>) may need <code>card3d</code> disabled to keep the transparent container stable</li>
+</ul>
+
+<h2>Splash text not appearing</h2>
+<ul>
+<li>Set <code>splash.text</code> to a non-empty string — empty string hides the splash entirely</li>
+<li>The splash renders above the profile card; if <code>fontSize</code> is too large, it may overflow or be clipped by the viewport</li>
+<li>If <code>splash.color</code> is empty, it inherits <code>theme.textColor</code> — if both end up matching the background, it's invisible</li>
+</ul>
+
+<h2>Links not opening</h2>
+<ul>
+<li>Each link needs a valid <code>url</code> including the protocol (<code>https://</code>). Relative paths like <code>/page</code> won't work unless hosted on a server</li>
+<li>The icon <code>color</code> field only affects the drop-shadow filter — it won't break the link if missing</li>
+<li>Check the browser console for errors — the link opens in a new tab via <code>window.open</code></li>
+</ul>
+
+<h2>Badge not showing correct color / tooltip</h2>
+<ul>
+<li>String shorthand badges (e.g., <code>"premium"</code>) auto-resolve name, color, and SVG from built-in maps — if the key doesn't exist in <code>BADGE_SVGS</code>, nothing renders</li>
+<li>For custom badges, use the full object format with <code>name</code>, <code>icon</code>, <code>color</code></li>
+<li>Tooltips are driven by the <code>name</code> field — if it's missing, the tooltip is empty</li>
+<li>Badge SVGs are inlined in <code>config.js</code> — you can add new icons by extending the <code>BADGE_SVGS</code> map</li>
+</ul>
+
+<h2>Volume control not visible</h2>
+<ul>
+<li><code>volumeControl.enabled</code> must be <code>true</code></li>
+<li>The volume slider is positioned outside the profile container at one of four corners — make sure there's enough viewport space around the card</li>
+<li>The <code>position</code> value is relative to the profile container, not the page. If the container is near the viewport edge, the slider may be partially off-screen</li>
+</ul>
+
+<h2>Container not centered / wrong width</h2>
+<ul>
+<li><code>containerWidth</code> sets the max-width — on very wide screens the container stays centered via <code>margin: 0 auto</code></li>
+<li>If the container sticks to the left, check that <code>index.html</code> hasn't had its centering CSS removed</li>
+<li>On mobile, the container fills the full width regardless of <code>containerWidth</code> — this is intentional for small screens</li>
+<li>Set <code>containerWidth</code> in rem or px — percentage values like <code>90%</code> are not tested and may behave unpredictably</li>
+</ul>
+
+<h2>Background image not showing with effects</h2>
+<ul>
+<li>The <code>background.src</code> image sits <em>behind</em> the canvas effects — if effects are opaque (e.g., <code>aurora</code> fills the whole canvas), you won't see the image</li>
+<li>Disable opaque effects or set <code>color</code> to match the dominant color of your image so the transition between image and effects is seamless</li>
+<li>The image is set as <code>background-image</code> on the page body — use a URL that supports CORS if externally hosted</li>
+</ul>
+
+<h2>Avatar not showing</h2>
+<ul>
+<li>If <code>avatar.type</code> is <code>"image"</code>, <code>avatar.src</code> must point to a valid image file — otherwise nothing renders (no fallback icon)</li>
+<li>The path is relative to <code>index.html</code>, not to <code>config.js</code></li>
+<li>Use <code>avatar.type: "icon"</code> to fall back to a generated avatar icon based on the username's first letter</li>
+<li>Square images work best — the avatar is displayed in a fixed-size circle with <code>object-fit: cover</code></li>
+</ul>
+
+<h2>Typewriter bio stuck / not cycling</h2>
+<ul>
+<li><code>bio.typewriter</code> must be <code>true</code> — if it's <code>false</code>, it shows static text only</li>
+<li><code>bio.texts</code> needs at least 2 entries for the cycling to be noticeable (with 1 entry it types once and pauses forever)</li>
+<li>Check <code>typeSpeed</code> and <code>deleteSpeed</code> — extremely high values (e.g., <code>5000</code>) make the animation appear frozen</li>
+<li>The cursor blinking is part of the typewriter element — if the cursor is missing but text appears, verify the CSS <code>.typing-cursor</code> class isn't overridden</li>
+</ul>
 </section>
 
 <section id="example-complete" class="doc-section">
 <h2>Complete Config Example</h2>
 
-<div class="code-block"><span class="lang-label">js</span><pre><code>const CONFIG = {
+<div class="code-block" data-lang="js"><pre><code>const CONFIG = {
   username: "Sixfy",
   uid: "20,028",
   splash: { text: "guns.lol", fontSize: "34px", fontFamily: "", fontWeight: "500", color: "" },
@@ -1343,13 +1444,127 @@ avatar: { type: "image", src: "src/assets/avatar/example.png" },</code></pre></d
 <div class="section-hero">
   <div class="hero-badge">Updates</div>
   <h1>Changelog</h1>
-  <p class="hero-desc">Recent changes to the guns.lol profile clone.</p>
+  <p class="hero-desc">Version history of the guns.lol profile clone.</p>
 </div>
 
-<h2>2026-07-03</h2>
-<ul>
-<li>Initial release &amp; docs site launch.</li>
-</ul>
+<div class="cl-timeline">
+
+<div class="cl-version">
+  <div class="cl-version-first-line">
+    <span class="cl-vtag">v1.0.1</span>
+    <span class="cl-vlatest">Latest</span>
+    <span class="cl-vdate">2026-07-04</span>
+  </div>
+  <div class="cl-body">
+
+    <div class="cl-category cl-cat-perf">
+      <div class="cl-cat-head">
+        <span class="cl-cat-dot cl-perf"></span>
+        <span class="cl-cat-label">Performance</span>
+      </div>
+      <ul class="cl-cat-items">
+        <li><strong>Single rAF orchestrator</strong>: Merged 8 independent <code>requestAnimationFrame</code> loops (aurora, dither, plasma, snow, rain, stars, fireflies, equalizer, avatar wave, mouse effects) into a single <code>_registerAnimation</code>/<code>_unregisterAnimation</code> orchestrator with weight-based skip framing.</li>
+        <li><strong>Reduced canvas resolution</strong>: Desktop canvas scale lowered from <code>0.75</code> &rarr; <code>0.55</code>; added <code>pixelScale = 0.35</code> for per-pixel effects (aurora, dither, plasma).</li>
+        <li><strong>Stars glow pre-render</strong>: Offscreen glow rendered once instead of per-frame radial gradients.</li>
+        <li><strong>Tooltip early return</strong>: Skip rAF when no <code>.tip-trigger</code> is hovered.</li>
+        <li><strong>Consolidated badge <code>&lt;style&gt;</code> tags</strong>: Injected once instead of per-badge.</li>
+      </ul>
+    </div>
+
+    <div class="cl-category cl-cat-naming">
+      <div class="cl-cat-head">
+        <span class="cl-cat-dot cl-naming"></span>
+        <span class="cl-cat-label">Clean Code</span>
+      </div>
+      <ul class="cl-cat-items">
+        <li>Renamed cryptic variables:
+          <ul>
+            <li><code>_hid</code> &rarr; <code>isPageHidden</code></li>
+            <li><code>_lowEnd</code> &rarr; <code>isLowEndDevice</code></li>
+            <li><code>_mobile</code> &rarr; <code>isMobile</code></li>
+            <li><code>_perfScale</code> &rarr; <code>performanceScale</code></li>
+            <li><code>_canvasScale</code> &rarr; <code>canvasScale</code></li>
+            <li><code>_rsTimer</code> / <code>_resizeCbs</code> &rarr; <code>resizeTimer</code> / <code>resizeCallbacks</code></li>
+            <li><code>_onResize</code> &rarr; <code>onResize</code></li>
+            <li><code>t</code> &rarr; <code>theme</code></li>
+          </ul>
+        </li>
+        <li>Removed unused <code>_rSize</code> utility function.</li>
+      </ul>
+    </div>
+
+    <div class="cl-category cl-cat-config">
+      <div class="cl-cat-head">
+        <span class="cl-cat-dot cl-config"></span>
+        <span class="cl-cat-label">Config</span>
+      </div>
+      <ul class="cl-cat-items">
+        <li>Reformatted <code>config.js</code> to multi-line sections with consistent indentation.</li>
+      </ul>
+    </div>
+
+    <div class="cl-category cl-cat-fixes">
+      <div class="cl-cat-head">
+        <span class="cl-cat-dot cl-fixes"></span>
+        <span class="cl-cat-label">Fixes</span>
+      </div>
+      <ul class="cl-cat-items">
+        <li><strong>3D card tilt</strong>: Restored to target <code>.card</code> directly (removed <code>.card-inner</code> wrapper that broke the original structure).</li>
+        <li><strong><code>_registerAnimation</code> bug</strong>: Function definitions were missing the underscore prefix, causing <code>ReferenceError</code> and blank page. Renamed <code>registerAnimation</code> &rarr; <code>_registerAnimation</code>, <code>unregisterAnimation</code> &rarr; <code>_unregisterAnimation</code>.</li>
+        <li><strong><code>theme</code> renames</strong>: Fixed side-effect corruptions where words ending in <code>t</code> (e.g., <code>rect</code>, <code>parent</code>, <code>playlist</code>, <code>layout</code>, <code>document</code>, <code>about</code>, <code>gradient</code>, <code>classList</code>, <code>target</code>, <code>shuffleText</code>, <code>mouseEffect</code>) were incorrectly transformed to <code>rectheme</code>, <code>parentheme</code>, etc.</li>
+      </ul>
+    </div>
+
+    <div class="cl-category cl-cat-css">
+      <div class="cl-cat-head">
+        <span class="cl-cat-dot cl-css"></span>
+        <span class="cl-cat-label">CSS</span>
+      </div>
+      <ul class="cl-cat-items">
+        <li>Restored original entrance animation on <code>.card</code>:
+          <ul>
+            <li><code>.card-init</code>: <code>transition: opacity 1s, margin-bottom .6s</code> with <code>margin-bottom: -100px</code></li>
+            <li><code>.card-show</code>: <code>opacity: 1 !important</code> with <code>margin-bottom: 0</code></li>
+          </ul>
+        </li>
+        <li>Removed <code>.card-inner</code> CSS rules (no longer needed).</li>
+      </ul>
+    </div>
+
+    <div class="cl-category cl-cat-house">
+      <div class="cl-cat-head">
+        <span class="cl-cat-dot cl-house"></span>
+        <span class="cl-cat-label">Housekeeping</span>
+      </div>
+      <ul class="cl-cat-items">
+        <li>Deleted <code>.config.js.bak</code> (leftover backup file).</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="cl-version">
+  <div class="cl-version-first-line">
+    <span class="cl-vtag">v1.0.0</span>
+    <span class="cl-vdate">2026-07-03</span>
+  </div>
+  <div class="cl-body">
+
+    <div class="cl-category cl-cat-house">
+      <div class="cl-cat-head">
+        <span class="cl-cat-dot cl-house"></span>
+        <span class="cl-cat-label">Release</span>
+      </div>
+      <ul class="cl-cat-items">
+        <li>Initial release &amp; docs site launch.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+</div>
 </section>
 
   </div>
